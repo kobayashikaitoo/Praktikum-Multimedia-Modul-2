@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabungan Tugas Modul 2 dan 3 - Friederik Ferdinand</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            background: #dff3f8;
+            color: #202b33;
+            font-family: Verdana, sans-serif;
+            line-height: 1.6;
+        }
+        .page-header-custom {
+            margin: 0 0 30px;
+            padding: 34px 20px;
+            background: #064663;
+            color: white;
+            text-align: center;
+        }
+        .page-header-custom h1 { margin: 0 0 10px; font-size: 30px; }
+        .page-header-custom p { margin: 0; }
+        .module { margin-bottom: 45px; }
+        .module-title {
+            padding: 16px 20px;
+            border-left: 8px solid #f28f3b;
+            background: white;
+            color: #064663;
+        }
+        .content-section {
+            margin: 20px 0;
+            padding: 22px;
+            background: white;
+            border: 1px solid #b7d5dc;
+            border-radius: 4px;
+        }
+        .content-section h3 { color: #064663; margin-top: 0; }
+        table { background: white; }
+        th { background: #064663; color: white; }
+        td, th { vertical-align: top !important; }
+        audio, video, iframe { max-width: 100%; }
+        .media-row { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
+        .media-card { flex: 1 1 300px; }
+        .video-controls { text-align: center; }
+        .video-controls button { margin: 3px; }
+        .drop-zone {
+            display: inline-flex;
+            width: 180px;
+            height: 105px;
+            margin: 8px;
+            padding: 10px;
+            border: 2px dashed #064663;
+            background: #eef8fa;
+            align-items: center;
+            justify-content: center;
+            vertical-align: top;
+        }
+        .drag-item {
+            padding: 15px 20px;
+            background: #f28f3b;
+            color: white;
+            border-radius: 3px;
+            cursor: grab;
+            font-weight: bold;
+        }
+        .bootstrap-area {
+            padding: 25px 0 95px;
+            background: #f7f9fa;
+            border-top: 8px solid #f28f3b;
+        }
+        .bootstrap-area .row h3 { color: #064663; }
+        .registration-form { max-width: 850px; }
+        .footer {
+            padding: 18px 0;
+            background: #064663;
+            color: white;
+            text-align: center;
+        }
+        .footer p { margin: 0; }
+        @media (max-width: 600px) {
+            .page-header-custom h1 { font-size: 23px; }
+            .content-section { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="page-header-custom">
+        <h1>Praktikum Multimedia</h1>
+        <p>Gabungan Tugas Modul 2 dan Modul 3</p>
+        <p>Nama: Friederik Ferdinand | NIM: 240211060035</p>
+    </header>
+
+    <main class="container">
+        <section class="module" id="modul-2">
+            <h2 class="module-title">MODUL 2 - HTML Audio, Video, YouTube dan API</h2>
+
+            <article class="content-section">
+                <h3>1. Bentuk dan Format Multimedia</h3>
+                <p>Multimedia dalam web meliputi suara, musik, video, film, animasi, gambar, dan rekaman. Format media dapat dikenali dari ekstensi file.</p>
+                <h4>Format Video</h4>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead><tr><th>Format</th><th>Ekstensi</th><th>Media Type</th><th>Dukungan HTML5</th></tr></thead>
+                        <tbody>
+                            <tr><td>MPEG</td><td>.mpg, .mpeg</td><td>-</td><td>Tidak</td></tr>
+                            <tr><td>AVI</td><td>.avi</td><td>-</td><td>Tidak</td></tr>
+                            <tr><td>WMV</td><td>.wmv</td><td>-</td><td>Tidak</td></tr>
+                            <tr><td>QuickTime</td><td>.mov</td><td>-</td><td>Tidak</td></tr>
+                            <tr><td>Flash</td><td>.swf, .flv</td><td>-</td><td>Tidak, memerlukan plug-in</td></tr>
+                            <tr><td>MP4</td><td>.mp4</td><td>video/mp4</td><td>Ya, direkomendasikan YouTube</td></tr>
+                            <tr><td>WebM</td><td>.webm</td><td>video/webm</td><td>Ya</td></tr>
+                            <tr><td>Ogg</td><td>.ogg</td><td>video/ogg</td><td>Ya</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h4>Format Audio</h4>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead><tr><th>Format</th><th>Ekstensi</th><th>Media Type</th><th>Dukungan HTML5</th></tr></thead>
+                        <tbody>
+                            <tr><td>MIDI</td><td>.mid, .midi</td><td>-</td><td>Tidak</td></tr>
+                            <tr><td>RealAudio</td><td>.rm, .ram</td><td>-</td><td>Tidak</td></tr>
+                            <tr><td>WMA</td><td>.wma</td><td>-</td><td>Tidak</td></tr>
+                            <tr><td>AAC</td><td>.aac</td><td>-</td><td>Tidak</td></tr>
+                            <tr><td>MP3</td><td>.mp3</td><td>audio/mpeg</td><td>Ya</td></tr>
+                            <tr><td>WAV</td><td>.wav</td><td>audio/wav</td><td>Ya</td></tr>
+                            <tr><td>Ogg</td><td>.ogg</td><td>audio/ogg</td><td>Ya</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <article class="content-section">
+                <h3>2. HTML5 Audio</h3>
+                <p>Tag <code>&lt;audio&gt;</code> dengan atribut <code>controls</code> menampilkan kendali play, pause, dan volume. Beberapa <code>source</code> dapat disediakan sebagai format alternatif.</p>
+                <audio controls>
+                    <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+                    <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                    Browser anda tidak mendukung elemen audio.
+                </audio>
+            </article>
+
+            <article class="content-section">
+                <h3>3. HTML5 Video</h3>
+                <div class="media-row">
+                    <div class="media-card">
+                        <h4>Video dengan kontrol</h4>
+                        <video width="320" height="240" controls>
+                            <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                            <source src="https://www.w3schools.com/html/movie.ogg" type="video/ogg">
+                            Browser anda tidak mendukung tag video.
+                        </video>
+                    </div>
+                    <div class="media-card">
+                        <h4>Autoplay, muted, dan loop</h4>
+                        <video width="320" height="240" autoplay muted loop>
+                            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                            <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+                            Browser anda tidak mendukung tag video.
+                        </video>
+                    </div>
+                </div>
+            </article>
+
+            <article class="content-section">
+                <h3>4. Video dengan JavaScript DOM</h3>
+                <p>Method <code>play()</code> dan <code>pause()</code> serta property <code>width</code> digunakan untuk mengendalikan video.</p>
+                <div class="video-controls">
+                    <button class="btn btn-primary" type="button" onclick="toggleVideo()">Play/Pause</button>
+                    <button class="btn btn-default" type="button" onclick="resizeVideo(560)">Big</button>
+                    <button class="btn btn-default" type="button" onclick="resizeVideo(320)">Small</button>
+                    <button class="btn btn-default" type="button" onclick="resizeVideo(420)">Normal</button>
+                    <br><br>
+                    <video id="controlled-video" width="420" controls>
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Browser anda tidak mendukung HTML5 video.
+                    </video>
+                </div>
+            </article>
+
+            <article class="content-section">
+                <h3>5. YouTube dengan iframe</h3>
+                <p>Video YouTube dapat disematkan menggunakan ID video pada URL <code>embed</code>. Contoh berikut menunjukkan iframe biasa, loop, dan kontrol yang disembunyikan.</p>
+                <div class="media-row">
+                    <iframe class="media-card" width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY" title="Video YouTube biasa" allowfullscreen></iframe>
+                    <iframe class="media-card" width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&amp;loop=1" title="Video YouTube loop" allowfullscreen></iframe>
+                    <iframe class="media-card" width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0" title="Video YouTube tanpa kontrol" allowfullscreen></iframe>
+                </div>
+                <p><strong>Parameter:</strong> <code>autoplay=1</code> untuk mulai otomatis, <code>loop=1</code> dengan playlist untuk mengulang, dan <code>controls=0</code> untuk menyembunyikan kontrol.</p>
+            </article>
+
+            <article class="content-section">
+                <h3>6. Geolocation API</h3>
+                <p>Geolocation meminta izin pengguna untuk membaca koordinat lokasi. Data yang ditampilkan meliputi latitude, longitude, dan accuracy.</p>
+                <button class="btn btn-primary" type="button" onclick="getLocation()">Tampilkan Lokasi</button>
+                <p id="location-result" class="alert alert-info" style="margin-top: 15px; display: none;"></p>
+            </article>
+
+            <article class="content-section">
+                <h3>7. Drag and Drop API</h3>
+                <p>Seret elemen di bawah dari satu kotak ke kotak lainnya. Event <code>dragstart</code>, <code>dragover</code>, dan <code>drop</code> digunakan dalam contoh ini.</p>
+                <div class="drop-zone" id="drop-zone-one" ondrop="dropItem(event)" ondragover="allowDrop(event)">
+                    <div id="drag-item" class="drag-item" draggable="true" ondragstart="dragItem(event)">SERET SAYA</div>
+                </div>
+                <div class="drop-zone" id="drop-zone-two" ondrop="dropItem(event)" ondragover="allowDrop(event)"></div>
+            </article>
+        </section>
+    </main>
+
+    <section class="bootstrap-area" id="modul-3">
+        <div class="container">
+            <h2 class="module-title">MODUL 3 - HTML dan Bootstrap</h2>
+            <div class="content-section">
+                <h3>1. Penerapan Grid Bootstrap</h3>
+                <p>Bootstrap membagi halaman menjadi 12 grid. Baris berada di dalam <code>container</code>, sedangkan kolom menggunakan kelas <code>col-sm-6</code>. Pada layar kecil, kedua kolom akan tersusun vertikal.</p>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h3>Tampilan 1</h3>
+                        <p>Kolom ini menempati 6 dari 12 grid. Kelas <code>col-sm-6</code> berlaku mulai dari ukuran layar tablet dan lebih besar.</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <h3>Tampilan 2</h3>
+                        <p>Setiap baris harus berjumlah 12 grid, misalnya 6 + 6, 4 + 8, atau 4 + 4 + 4.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3>2. Form Registrasi Bootstrap</h3>
+                <p>Form menggunakan <code>form-group</code> untuk setiap input dan <code>form-control</code> untuk elemen input serta select.</p>
+                <form class="registration-form" action="#" onsubmit="return submitRegistration(event)">
+                    <div class="form-group">
+                        <label for="registration-name">Nama:</label>
+                        <input type="text" class="form-control" id="registration-name" name="nama" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registration-email">Email:</label>
+                        <input type="email" class="form-control" id="registration-email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registration-password">Password:</label>
+                        <input type="password" class="form-control" id="registration-password" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Jenis Kelamin:</label>
+                        <select class="form-control" id="gender" name="jenis-kelamin">
+                            <option>Pria</option>
+                            <option>Wanita</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <span id="registration-result" class="text-success" style="margin-left: 10px;"></span>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p><strong>Nama:</strong> Friederik Ferdinand | <strong>NIM:</strong> 240211060035</p>
+        <p>Praktikum Multimedia - Gabungan Modul 2 dan Modul 3</p>
+    </footer>
+
+    <script>
+        var controlledVideo = document.getElementById("controlled-video");
+
+        function toggleVideo() {
+            if (controlledVideo.paused) {
+                controlledVideo.play();
+            } else {
+                controlledVideo.pause();
+            }
+        }
+
+        function resizeVideo(width) {
+            controlledVideo.width = width;
+        }
+
+        function getLocation() {
+            var result = document.getElementById("location-result");
+            result.style.display = "block";
+            if (!navigator.geolocation) {
+                result.textContent = "Geolocation tidak didukung oleh browser ini.";
+                return;
+            }
+            result.textContent = "Meminta izin lokasi...";
+            navigator.geolocation.getCurrentPosition(function (position) {
+                result.innerHTML = "Latitude: " + position.coords.latitude +
+                    "<br>Longitude: " + position.coords.longitude +
+                    "<br>Accuracy: " + position.coords.accuracy + " meter";
+            }, function (error) {
+                var message = "Informasi lokasi tidak tersedia.";
+                if (error.code === error.PERMISSION_DENIED) message = "Permintaan lokasi ditolak pengguna.";
+                if (error.code === error.TIMEOUT) message = "Permintaan lokasi melebihi batas waktu.";
+                result.textContent = message;
+            });
+        }
+
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function dragItem(event) {
+            event.dataTransfer.setData("text", event.target.id);
+        }
+
+        function dropItem(event) {
+            event.preventDefault();
+            var itemId = event.dataTransfer.getData("text");
+            event.currentTarget.appendChild(document.getElementById(itemId));
+        }
+
+        function submitRegistration(event) {
+            event.preventDefault();
+            document.getElementById("registration-result").textContent = "Data berhasil diperiksa.";
+            return false;
+        }
+    </script>
+</body>
+</html>
